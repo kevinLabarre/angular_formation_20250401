@@ -3,3 +3,16 @@
 <button class="btn" (click)="navigateToProductDetail()">Naviguer au produit d'id {{productId}}</button>
 
 <input type="text" [(ngModel)]="productId">
+
+@for (product of products; track product.id) {
+<div class="pt-2 border m-2">
+  <ul>
+    <li>{{product.id}}</li>
+    <li>{{product.name}}</li>
+    <li>{{product.number}}</li>
+    <li>{{product.price}}</li>
+    <li>{{product.category}}</li>
+  </ul>
+</div>
+
+}
