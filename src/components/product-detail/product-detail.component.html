@@ -1,2 +1,17 @@
-<h1>Détails du produit</h1>
-<p>id : {{productId}}</p>
+<nav class="h-full w-40 p-4 fixed left-0 top-16 flex flex-col justify-start">
+  <a class="block py-2 px-4 rounded-t" [routerLink]="['./description']" routerLinkActive="active">Description</a>
+  <a class="block py-2 px-4" routerLink="./ficheTech" routerLinkActive="active">Fiche Technique</a>
+  <a class="block py-2 px-4 rounded-b" routerLink="./devis" routerLinkActive="active">Demander un Devis</a>
+</nav>
+
+<!--
+<router-outlet> sera remplacé par le "bon" composant enfant, en fonction de la route choisi
+  Sans <router-outlet>, uniquement le composant parent sera affiché, jamais un seul des enfants
+-->
+<section class="ml-40">
+  <h1>Détails du produit</h1>
+  <p>id : {{productId}}</p>
+  <div class="pt-5">
+    <router-outlet></router-outlet>
+  </div>
+</section>

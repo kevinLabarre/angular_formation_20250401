@@ -1,14 +1,16 @@
+<!--
 <nav class="bg-neutral flex justify-center space-x-4 py-5">
   <a class="hover:underline cursor-pointer" routerLink="/" routerLinkActive="buttonActive"
     [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
   <a class="hover:underline cursor-pointer" routerLink="/products" routerLinkActive="buttonActive">Produits</a>
   <a class="hover:underline cursor-pointer" routerLink="/product/1" routerLinkActive="buttonActive">Détails</a>
 </nav>
-
-<!--
-<nav class="bg-neutral flex justify-center space-x-4 py-5">
-  <app-nav-button></app-nav-button>
-  <app-nav-button></app-nav-button>
-  <app-nav-button></app-nav-button>
-</nav>
 -->
+
+
+
+<nav class="bg-neutral flex justify-center space-x-4 py-5">
+  <app-nav-button [linkData]="{routerLink: '/', title: 'Accueil'}"></app-nav-button>
+  <app-nav-button [linkData]="{routerLink: '/products', title: 'Produits'}"></app-nav-button>
+  <app-nav-button [linkData]="{routerLink: '/product/1', title: 'Détails'}"></app-nav-button>
+</nav>

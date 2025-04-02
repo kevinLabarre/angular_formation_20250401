@@ -1,1 +1,2 @@
-<a class="hover:underline cursor-pointer" routerLink="/">Accueil</a>
+<a class="hover:underline cursor-pointer" [routerLink]="linkData.routerLink" routerLinkActive="activeNavButton"
+  [routerLinkActiveOptions]="{ exact: true }">{{linkData.title}}</a>
