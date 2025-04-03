@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Iproducts } from '../interfaces/Iproduct';
+import { IproductDw } from '../interfaces/IproductDw';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Iproducts } from '../interfaces/Iproduct';
 export class ProductsService {
 
   private baseUrl: string = 'http://localhost:3001/products'
+  private baseUrlDwStore: string = 'http://localhost:3001/dw_store'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,4 +18,7 @@ export class ProductsService {
     return this.httpClient.get<Iproducts[]>(this.baseUrl)
   }
 
+  public getDwProducts(): Observable<IproductDw[]> {
+    return this.httpClient.get<IproductDw[]>(this.baseUrlDwStore)
+  }
 }

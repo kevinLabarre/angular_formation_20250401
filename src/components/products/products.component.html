@@ -14,5 +14,18 @@
     <li>{{product.category}}</li>
   </ul>
 </div>
+}
+
+@for (product of productsDw; track product.id) {
+<div class="pt-2 border m-2">
+  <ul>
+    <li>{{product.id}}</li>
+    <li>{{product.title}}</li>
+    <li>{{product.price}}</li>
+    <li>{{product.category}}</li>
+    <li>{{product.image}}</li>
+    <li>{{product.description}}</li>
+  </ul>
+</div>
 
 }
