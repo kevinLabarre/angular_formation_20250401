@@ -1,0 +1,18 @@
+<h1 class="text-4xl font-bold text-center my-10">Pokedex</h1>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 p-5">
+  @for (pokemon of responseApi.pokemons; track pokemon.name) {
+  <app-poke-card [pokemon]="pokemon"></app-poke-card>
+  }
+</section>
+
+
+
+<section class="w-fit m-auto">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="previousPage()">Précédent</button>
+  {{paginationInfo.currentPage}}
+
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="nextPage()">Suivant</button>
+  Dernière page : {{paginationInfo.lastPage}}
+</section>
