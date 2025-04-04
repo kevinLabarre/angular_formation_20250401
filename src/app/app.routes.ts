@@ -10,11 +10,16 @@ import { LoginFormComponent } from '../components/login-form/login-form.componen
 export const routes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'pokedex', component: PokedexComponent },
+  {
+    path: 'pokedex',
+    // component: PokedexComponent // Sans lazy loading
+    loadComponent: () => import("../components/pokedex/pokedex.component").then(m => m.PokedexComponent)
+  },
   { path: 'login', component: LoginFormComponent }, // accessible sur '/login' }
   {
     path: 'product/:id',
-    component: ProductDetailComponent,
+    component: ProductDetailComponent, // Sans lazy loading
+
     children: [
       { path: 'description', component: DescriptionComponent },    // accessible sur '/product/:id/description'
       { path: 'ficheTech', component: FicheTechComponent },

@@ -142,7 +142,7 @@
       "image": "https://imgs.search.brave.com/pW4c42uCtDyXfm93WrSPKgo-ejzZQRyYV1hfRbvutLQ/rs:fit:1200:700:1/g:ce/aHR0cHM6Ly9zdGF0/aWMzLmdhbWVyYW50/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDYv/bmludGVuZG8tc3dp/dGNoLWNvbnNvbGUu/anBn",
       "description": "La Nintendo Switch est une console de jeux vidéo hybride développée par Nintendo.",
       "slug": "nintendo-switch",
-      "category": "Jeux video"
+      "category": "Jeux vidéo"
     },
     {
       "id": "2",
@@ -174,7 +174,7 @@
     {
       "id": "5",
       "title": "Oculus Quest 2",
-      "price": 400,
+      "price": 40,
       "image": "https://imgs.search.brave.com/N1yi6yNQJBlMmbGyFrxDWXA7eJQ12L8sVzn-sxFfzfE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nYW1p/bmdib2x0LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/OS9vY3VsdXMtcXVl/c3QtMi1pbWFnZS02/LmpwZw",
       "description": "L'Oculus Quest 2 est un casque de réalité virtuelle autonome développé par Oculus.",
       "slug": "oculus-quest-2",

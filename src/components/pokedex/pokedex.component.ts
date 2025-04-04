@@ -14,7 +14,7 @@ export class PokedexComponent implements OnInit {
 
   constructor(private service: PokemonService) { }
 
-  responseApi!: { pokemons: IPokemon[]; count: number; }
+  responseApi: { pokemons: IPokemon[]; count: number; } = { pokemons: [], count: 0 }
 
   totalPokemons: number = 0;
 

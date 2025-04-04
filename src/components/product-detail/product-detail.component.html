@@ -18,20 +18,22 @@
   <router-outlet></router-outlet>
 </section>
 
-@if(product) {
+<!--  SANS LE PIPE ASYNC -->
+@if(productWithOuPipe) {
 <section class="w-1/2 mx-auto">
   <div class="bg-white rounded-xl shadow-md overflow-hidden">
     <div class="flex">
       <div class="flex-shrink-0">
-        <img class="h-48 w-full object-cover md:h-full md:w-48" [src]="product.image" alt="{{product.title}}">
+        <img class="h-48 w-full object-cover md:h-full md:w-48" [src]="productWithOuPipe.image"
+          alt="{{productWithOuPipe.title}}">
       </div>
       <div class="p-8">
-        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{product.category}}</div>
-        <p class="block mt-1 text-lg leading-tight font-medium text-black">{{product.title}}
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{productWithOuPipe.category}}</div>
+        <p class="block mt-1 text-lg leading-tight font-medium text-black">{{productWithOuPipe.title}}
         </p>
-        <p class="mt-2 text-gray-500">{{product.description}}</p>
+        <p class="mt-2 text-gray-500">{{productWithOuPipe.description}}</p>
         <div class="mt-4">
-          <span class="text-gray-900 font-bold">{{product.price}}€</span>
+          <span class="text-gray-900 font-bold">{{productWithOuPipe.price}}€</span>
         </div>
       </div>
     </div>
@@ -42,6 +44,33 @@
 <section class="w-1/2 mx-auto">
   <button class="btn m-5" (click)="handleUpdateProduct()">Mettre à jour le produit</button>
   @if(displayProduct){
-  <app-update-product-form [product]="product" />
+  <app-update-product-form [product]="productWithOuPipe" (productUpdated)="recevoirDonneEnfant($event)" />
+  }
+</section>
+
+
+
+<!-- AVEC LE PIPE ASYNC -->
+<section class="mt-5 border">
+  <h1 class="text-center my-5">Exemple Pipe "async"</h1>
+  @if($product | async; as product) {
+  <div class="w-1/2 mx-auto">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <img class="h-48 w-full object-cover md:h-full md:w-48" [src]="product.image" alt="{{product.title}}">
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{product.category}}</div>
+          <p class="block mt-1 text-lg leading-tight font-medium text-black">{{product.title}}
+          </p>
+          <p class="mt-2 text-gray-500">{{product.description}}</p>
+          <div class="mt-4">
+            <span class="text-gray-900 font-bold">{{product.price}}€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   }
 </section>

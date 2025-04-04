@@ -26,4 +26,8 @@ export class ProductsService {
     return this.httpClient.get<IproductDw>(`${this.baseUrlDwStore}/${id}`)
   }
 
+  updateDwProduct(product: IproductDw): Observable<IproductDw> {
+    return this.httpClient.put<IproductDw>(`${this.baseUrlDwStore}/${product.id}`, product)
+  }
+
 }

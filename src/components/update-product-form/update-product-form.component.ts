@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IproductDw } from '../../interfaces/IproductDw';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-update-product-form',
@@ -14,7 +15,13 @@ export class UpdateProductFormComponent implements OnChanges {
 
   @Input() product?: IproductDw
 
-  constructor() {
+  @Output() productUpdated: EventEmitter<IproductDw> = new EventEmitter()
+
+  envoyerDonneeVersParent(product: IproductDw) {
+    this.productUpdated.emit(product)
+  }
+
+  constructor(private service: ProductsService) {
     this.productForm = new FormGroup({
       id: new FormControl(''),
       title: new FormControl(''),
@@ -43,7 +50,7 @@ export class UpdateProductFormComponent implements OnChanges {
   }
 
   onSubmit() {
-    this.productForm.value
+    this.service.updateDwProduct(this.productForm.value).subscribe(resp => this.envoyerDonneeVersParent(resp))
   }
 
 }
