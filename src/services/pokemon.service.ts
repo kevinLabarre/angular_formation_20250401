@@ -12,7 +12,6 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-
   private getResumePokemons(limit: number, offset: number): Observable<{ count: number, results: { name: string, count: number }[] }> {
     return this.http.get<{ count: number, results: { name: string, count: number }[] }>(`${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`);
   }
@@ -32,6 +31,4 @@ export class PokemonService {
       })
     )
   }
-
-
 }

@@ -14,7 +14,6 @@ interface loginObject {
 })
 export class LoginFormComponent {
 
-
   loginForm: FormGroup = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
@@ -43,7 +42,6 @@ export class LoginFormComponent {
   get passwordErrors() {
     return this.loginForm.get('password')?.errors
   }
-
 
   get emailTouched() {
     return this.loginForm.get('email')?.touched

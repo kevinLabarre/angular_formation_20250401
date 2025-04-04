@@ -21,4 +21,9 @@ export class ProductsService {
   public getDwProducts(): Observable<IproductDw[]> {
     return this.httpClient.get<IproductDw[]>(this.baseUrlDwStore)
   }
+
+  public getDwProductById(id: number): Observable<IproductDw> {
+    return this.httpClient.get<IproductDw>(`${this.baseUrlDwStore}/${id}`)
+  }
+
 }
